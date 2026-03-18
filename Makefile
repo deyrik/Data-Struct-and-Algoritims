@@ -6,6 +6,7 @@ caminhoList = $(caminho)/List
 caminhoLinkedList = $(caminho)/Linked\ List
 caminhoStack = $(caminho)/Simple\ Stack
 caminhoLinkedStack = $(caminho)/Stack\ with\ Linked
+caminhoQueue = $(caminho)/Queue\ with\ Array
 
 
 list: 
@@ -20,5 +21,9 @@ simpleStack:
 linkedStack: 
 	$(compilador) $(caminhoLinkedStack)/linkedStack.c -o linkedStack.o
 	
+queue:
+	$(compilador) $(caminhoQueue)/queue.c -o queue.o
+
+
 clear:
 	rm -rf *.o
