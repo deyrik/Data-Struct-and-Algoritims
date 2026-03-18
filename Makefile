@@ -5,6 +5,7 @@ caminho = Data\ Structs
 caminhoList = $(caminho)/List
 caminhoLinkedList = $(caminho)/Linked\ List
 caminhoStack = $(caminho)/Simple\ Stack
+caminhoLinkedStack = $(caminho)/Stack\ with\ Linked
 
 
 list: 
@@ -16,6 +17,8 @@ linkedList:
 simpleStack: 
 	$(compilador) $(caminhoStack)/simpleStack.c -o simpleStack.o
 
+linkedStack: 
+	$(compilador) $(caminhoLinkedStack)/linkedStack.c -o linkedStack.o
 	
 clear:
 	rm -rf *.o
