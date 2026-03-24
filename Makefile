@@ -1,12 +1,13 @@
 compilador = gcc
-caminho = Data\ Structs
+caminho1 = Data\ Structs
+caminho2 = Ordenation
 
 
-caminhoList = $(caminho)/List
-caminhoLinkedList = $(caminho)/Linked\ List
-caminhoStack = $(caminho)/Simple\ Stack
-caminhoLinkedStack = $(caminho)/Stack\ with\ Linked
-caminhoQueue = $(caminho)/Queue\ with\ Array
+caminhoList = $(caminho1)/List
+caminhoLinkedList = $(caminho1)/Linked\ List
+caminhoStack = $(caminho1)/Simple\ Stack
+caminhoLinkedStack = $(caminho1)/Stack\ with\ Linked
+caminhoQueue = $(caminho1)/Queue\ with\ Array
 
 
 list: 
@@ -24,6 +25,8 @@ linkedStack:
 queue:
 	$(compilador) $(caminhoQueue)/queue.c -o queue.o
 
+ordenation:
+	$(compilador) $(caminho2)/main.c $(caminho2)/ordenation.c -o ordenation.o
 
 clear:
 	rm -rf *.o
