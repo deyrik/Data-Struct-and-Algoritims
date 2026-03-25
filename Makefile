@@ -28,5 +28,8 @@ queue:
 ordenation:
 	$(compilador) $(caminho2)/main.c $(caminho2)/ordenation.c -o ordenation.o
 
+tree:
+	$(compilador) Trees/BST.c Test/TreeTest.c -o tree.o
+
 clear:
 	rm -rf *.o
