@@ -1,4 +1,4 @@
-#include "../Trees/BST.h"
+#include "../Trees/Binary Search Tree/BST.h"
 
 int main()
 {
@@ -49,6 +49,8 @@ int main()
     printf("\nImprimindo a arvore em ordem crescente: \n");
     ordem(arvore);
     printf("\n");
+
+    liberaArvore(&arvore);
 
     return 0;
 }

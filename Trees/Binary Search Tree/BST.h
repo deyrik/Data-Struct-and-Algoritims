@@ -49,4 +49,7 @@ void antecessor(Apontador q, Apontador *r);
 //retira registro da arvore.
 void retira(Apontador* no, Chave registro);
 
+//libera todos os nós da arvore e aterra a raiz
+void liberaArvore(Apontador *no);
+
 #endif

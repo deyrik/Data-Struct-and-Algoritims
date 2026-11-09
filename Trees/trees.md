@@ -43,4 +43,7 @@ A Árvore de Busca Binária (BST) é uma estrutura de dados baseada em nós, ond
   Remove um elemento da árvore lidando com 3 casos possíveis:
   1. **Nó Folha / 1 Filho à Direita:** Remove o nó e liga o pai ao filho restante (ou a `NULL`).
   2. **1 Filho à Esquerda:** Remove o nó e liga o pai ao filho esquerdo.
-  3. **2 Filhos:** O caso mais complexo. Usa a função `antecessor` para buscar o elemento correto para assumir a
+  3. **2 Filhos:** O caso mais complexo. Usa a função `antecessor` para buscar o elemento correto (maior da sub-árvore esquerda) para assumir a posição do nó removido, mantendo as regras da BST intactas.
+
+* **`liberaArvore(Apontador *no)`**
+  Percorre recursivamente toda a árvore em pós-ordem liberando a memória alocada de cada nó com `free` e aterra o ponteiro da raiz (`NULL`), prevenindo vazamentos de memória (*memory leaks*).

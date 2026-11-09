@@ -4,16 +4,19 @@
 void inicializa (Apontador* no){
     *no = NULL;
     printf("Criada arvore BST com sucesso...\n");
-
-};
+}
 
 void insere (Apontador *no, Chave X){
     if (*no == NULL){
         *no = (Apontador) malloc(sizeof(No));
+        if (*no == NULL) {
+            printf("Erro: falha na alocacao de memoria!\n");
+            return;
+        }
         (*no)->registro = X;
         (*no)->esq = NULL;
         (*no)->dir = NULL; 
-        printf("Incersao bem sucedida\n");
+        printf("Insercao bem sucedida\n");
         return;
     }
 
@@ -30,7 +33,7 @@ void insere (Apontador *no, Chave X){
         insere(&(*no)->esq,X);
         return;
     }
-};
+}
 
 void ordem(Apontador no){
     if (no == NULL) {
@@ -109,7 +112,7 @@ void antecessor(Apontador q, Apontador *r){
     
 }
 
-void retira(Apontador* no, int registro) {
+void retira(Apontador* no, Chave registro) {
     // 1. Caso base: Chegou no fim e não achou
     if ((*no) == NULL) {
         printf("Elemento nao existe ou a arvore esta vazia\n");
@@ -147,4 +150,15 @@ void retira(Apontador* no, int registro) {
             printf("Registro retirado com sucesso!!!\n");
         }
     }
+}
+
+//libera todos os nós da arvore e aterra a raiz
+void liberaArvore(Apontador *no){
+    if (*no == NULL) {
+        return;
+    }
+    liberaArvore(&(*no)->esq);
+    liberaArvore(&(*no)->dir);
+    free(*no);
+    *no = NULL;
 }
