@@ -1,15 +1,17 @@
 compilador = gcc
-caminho1 = Data\ Structs
-caminho2 = Ordenation
 
-caminhoTest = Test
+caminhoDataStructs = Data\ Structs
+caminhoOrdenation  = Ordenation
+caminhoTrees       = Trees
+caminhoTest        = Test
 
-caminhoList = $(caminho1)/List
-caminhoLinkedList = $(caminho1)/Linked\ List
-caminhoStack = $(caminho1)/Simple\ Stack
-caminhoLinkedStack = $(caminho1)/Stack\ with\ Linked
-caminhoQueue = $(caminho1)/Queue\ with\ Array
+caminhoList        = $(caminhoDataStructs)/List
+caminhoLinkedList  = $(caminhoDataStructs)/Linked\ List
+caminhoStack       = $(caminhoDataStructs)/Simple\ Stack
+caminhoLinkedStack = $(caminhoDataStructs)/Stack\ with\ Linked
+caminhoQueue       = $(caminhoDataStructs)/Queue\ with\ Array
 
+caminhoBST         = $(caminhoTrees)/Binary\ Search\ Tree
 
 list: 
 	$(compilador) $(caminhoList)/list.c -o list.o
@@ -23,14 +25,17 @@ simpleStack:
 linkedStack: 
 	$(compilador) $(caminhoLinkedStack)/linkedStack.c -o linkedStack.o
 	
-queue: 
+queue:
 	$(compilador) $(caminhoQueue)/queue.c -o queue.o
 
 ordenation:
-	$(compilador) $(caminhoTest)/testOrdenation.c $(caminho2)/ordenation.c -o ordem.o
+	$(compilador) $(caminhoTest)/testOrdenation.c $(caminhoOrdenation)/ordenation.c -o ordem.o
 
-tree:
-	$(compilador) Trees/BST.c Test/TreeTest.c -o tree.o
+dataStructs:
+	$(compilador) $(caminhoTest)/testDataStructs.c -o dataStructs.o
+
+BST:
+	$(compilador) $(caminhoTest)/testTree.c $(caminhoBST)/BST.c -o BST.o
 
 clear:
 	rm -rf *.o
