@@ -2,6 +2,7 @@ compilador = gcc
 caminho1 = Data\ Structs
 caminho2 = Ordenation
 
+caminhoTest = Test
 
 caminhoList = $(caminho1)/List
 caminhoLinkedList = $(caminho1)/Linked\ List
@@ -22,11 +23,11 @@ simpleStack:
 linkedStack: 
 	$(compilador) $(caminhoLinkedStack)/linkedStack.c -o linkedStack.o
 	
-queue:
+queue: 
 	$(compilador) $(caminhoQueue)/queue.c -o queue.o
 
 ordenation:
-	$(compilador) $(caminho2)/main.c $(caminho2)/ordenation.c -o ordenation.o
+	$(compilador) $(caminhoTest)/testOrdenation.c $(caminho2)/ordenation.c -o ordem.o
 
 tree:
 	$(compilador) Trees/BST.c Test/TreeTest.c -o tree.o
